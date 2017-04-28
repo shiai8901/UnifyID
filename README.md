@@ -36,4 +36,13 @@ In case that you need to preserve a global state across several pages you can us
 that is in this folder.
 More about background scripts: https://developer.chrome.com/extensions/background_pages
 More about communication with the background script: https://developer.chrome.com/extensions/nativeMessaging
-# UnifyID-Detection-Challenge
+
+# My Approach
+
+Since almost every website has its own way to name the username field, password field and login button, so I decided to save all the selector strings inside an "selector" object, and use website hostname as attribute name in the "selector" object. Each website attribute is an object, with three attributes, including username, password and loginbutton, and the values for each attribute are the real selector strings. Therefore, it is easy to scale the selectors.
+
+In order to find the right selector strings, I used a for loop to compared website hostname with the attribute names inside the "selector" object. If website hostname and attribute name are the same, the variables: emailSelector, passwordSelector and loginbtnSelector will be assigned with the selector strings. In case current website hostname does not match with any cite names in the "selector" object, I assigned default values for emailSelector, passwordSelector and loginbtnSelector variables.
+
+The last change is replacing the generic selector strings with emailSelector, passwordSelector and loginbtnSelector variables inside getUsernameField(), getPasswordField() and getSubmitButton() functions.
+
+My next step is to learn how to use background script, so I can save the "selector" object and the selector string finding method as a global state for later use.
