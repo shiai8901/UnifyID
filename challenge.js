@@ -77,7 +77,6 @@ window.loginWithCredentials = function(username, password) {
   //
   // XXX: Modify this code, if necessary, to work on more sites.
   //
-  console.log("loginWithCredentials, username: ", username, "password: ", password);
   let usernameField = getUsernameField();
   let passwordField = getPasswordField();
 
@@ -126,7 +125,6 @@ window.obtainFieldsValues = function() {
   //
   // XXX: Modify this code, if necessary, to work on more sites.
   //
-  console.log("obtainFieldsValues, username", getUsernameField().val(), "password", getPasswordField().val());
   return {
     username: getUsernameField().val(),
     password: getPasswordField().val()
